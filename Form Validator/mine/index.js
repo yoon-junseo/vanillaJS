@@ -4,10 +4,10 @@ const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 const confirmPassword = document.querySelector("#confirm-password");
 const submitBtn = document.querySelector("button");
-
 // 사용자 이름 확인
 function checkUsername() {
   let formControl = username.parentNode;
+  console.log(formValidates.children[0]);
 
   if (username.value.length < 3) {
     formValidates[0].children[2].style.visibility = "visible";
