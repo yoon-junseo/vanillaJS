@@ -44,6 +44,7 @@ function onChangeSelect(e) {
   if (seatCount) {
     updateMovieInfo(seatCount, ticketPrice);
   }
+  console.log(selectBoxOptions);
   localStorage.setItem("moviePrice", ticketPrice);
   localStorage.setItem("movieIndex", selectBoxOptions["selectedIndex"]);
 }
