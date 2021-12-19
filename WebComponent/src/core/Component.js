@@ -36,7 +36,6 @@ export default class Component {
       children.includes(target) || target.closest(selector);
 
     this.$target.addEventListener(eventType, (event) => {
-      console.log(event.target);
       if (!isTarget(event.target)) return false;
       callback(event);
     });
