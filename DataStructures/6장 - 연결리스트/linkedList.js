@@ -6,6 +6,7 @@ function Node(element) {
 
 function LinkedList() {
   this.head = new Node("head");
+  this.head.next = this.head;
   this.find = find;
   this.insert = insert;
   this.findPrevious = findPrevious;
@@ -69,8 +70,7 @@ function dispReverse() {
   let currNode = this.head;
   currNode = this.findLast();
 
-  while (currNode.previous !== null) {
-    console.log(currNode.element);
+  while (currNode.previous !== null && currNode.next.element !== "head") {
     currNode = currNode.previous;
   }
 }
@@ -78,7 +78,7 @@ function dispReverse() {
 function display() {
   let currNode = this.head;
 
-  while (currNode.next !== null) {
+  while (currNode.next !== null && currNode.next.element !== "head") {
     console.log(currNode.next.element);
     currNode = currNode.next;
   }
@@ -98,5 +98,3 @@ console.log("---------------");
 cities.remove("4");
 cities.display();
 console.log("---------------");
-
-cities.dispReverse();
