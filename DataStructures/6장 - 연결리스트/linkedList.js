@@ -7,11 +7,13 @@ function Node(element) {
 function LinkedList() {
   this.head = new Node("head");
   this.head.next = this.head;
+  this.currNode = this.head;
   this.find = find;
   this.insert = insert;
   this.findPrevious = findPrevious;
   this.remove = remove;
   this.findLast = findLast;
+  this.advance = advance;
   this.dispReverse = dispReverse;
   this.display = display;
 }
@@ -33,6 +35,7 @@ function insert(newElement, item) {
   newNode.next = current.next;
   newNode.previous = current;
   current.next = newNode;
+  this.currNode = newNode;
 }
 
 function findPrevious(item) {
@@ -51,9 +54,21 @@ function remove(item) {
   if (currNode.next !== null) {
     currNode.previous.next = currNode.next;
     currNode.next.previous = currNode.previous;
+    this.currNode = currNode.next.previous;
+
     currNode.next = null;
     currNode.previous = null;
   }
+}
+
+function advance(n) {
+  for (let i = 0; i < n; i++) {
+    if (this.currNode.next !== null) {
+      this.currNode = this.currNode.next;
+    }
+  }
+
+  return this.currNode;
 }
 
 function findLast() {
@@ -98,3 +113,5 @@ console.log("---------------");
 cities.remove("4");
 cities.display();
 console.log("---------------");
+
+console.log(cities.advance(0));
