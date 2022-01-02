@@ -15,6 +15,7 @@ function LinkedList() {
   this.findLast = findLast;
   this.advance = advance;
   this.back = back;
+  this.show = show;
   this.dispReverse = dispReverse;
   this.display = display;
 }
@@ -82,6 +83,10 @@ function back(n) {
   return this.currNode;
 }
 
+function show() {
+  console.log(this.currNode);
+}
+
 function findLast() {
   let currNode = this.head;
 
@@ -129,3 +134,6 @@ console.log(cities.advance(0));
 console.log("---------------");
 
 console.log(cities.back(2));
+console.log("---------------");
+
+cities.show();
