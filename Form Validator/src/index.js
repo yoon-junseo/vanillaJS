@@ -7,7 +7,6 @@ const submitBtn = document.querySelector("button");
 // 사용자 이름 확인
 function checkUsername() {
   let formControl = username.parentNode;
-  console.log(formValidates.children[0]);
 
   if (username.value.length < 3) {
     formValidates[0].children[2].style.visibility = "visible";
@@ -71,9 +70,7 @@ function checkValidatePassword() {
     formValidates[3].children[2].style.visibility = "visible";
     isValidated2 = false;
   }
-  console.log(password.value, confirmPassword.value);
 
-  console.log(isValidated1, isValidated2);
   if (isValidated1 && isValidated2) {
     formControl.setAttribute("class", "form-validate success");
   } else {
