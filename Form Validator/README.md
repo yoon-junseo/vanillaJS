@@ -83,3 +83,7 @@ dom에 접근하는 코드가 반복 되어서 돔에 관례적으로 $를 사�
 ```javascript
 const $ = (selector) => document.querySelector(selector);
 ```
+
+### 본문
+
+https://jun5e00-dev-diary.tistory.com/8
