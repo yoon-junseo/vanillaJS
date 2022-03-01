@@ -64,6 +64,10 @@ button {
 }
 
 .form-validate small {
-  color: red;
   visibility: hidden;
+}
+
+.form-validate.failure small {
+  color: red;
+  visibility: visible;
 }
