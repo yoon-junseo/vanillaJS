@@ -5,7 +5,6 @@ import { ESC_KEY_LIST } from "../lib/constants.js";
 import BreadCrumb from "./BreadCrumb.js";
 import Nodes from "./Nodes.js";
 import ImageView from "./ImageView.js";
-import Loading from "./Loading.js";
 
 export default class App {
   $imageView = null;
@@ -114,7 +113,7 @@ export default class App {
 
       if (!$imageView) return;
 
-      this.$target.removeChild($imageViewg);
+      this.$target.removeChild($imageView);
     });
   }
 
